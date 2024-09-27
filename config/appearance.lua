@@ -10,7 +10,8 @@ return {
    webgpu_preferred_adapter = gpu_adapters:pick_best(),
 
    -- color scheme
-   colors = colors,
+   -- colors = colors,
+   color_scheme = 'Tokyo Night',
 
    -- background
    background = {
