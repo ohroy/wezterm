@@ -4,7 +4,7 @@ local colors = require("colors.custom")
 
 return {
    animation_fps = 60,
-   max_fps = 60,
+   max_fps = 240,
    front_end = "WebGpu",
    webgpu_power_preference = "HighPerformance",
    webgpu_preferred_adapter = gpu_adapters:pick_best(),

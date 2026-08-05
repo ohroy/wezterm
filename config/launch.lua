@@ -1,4 +1,4 @@
-local platform = require('utils.platform')()
+local platform = require("utils.platform")()
 
 local options = {
    default_prog = {},
@@ -6,31 +6,26 @@ local options = {
 }
 
 if platform.is_win then
-   options.default_prog = { 'pwsh', '-NoLogo' }
+   options.default_domain = "WSL:Ubuntu"
+   -- options.default_cwd = "~"
    options.launch_menu = {
-      { label = 'PowerShell Core', args = { 'pwsh', '-NoLogo' } },
-      { label = 'PowerShell Desktop', args = { 'powershell' } },
-      { label = 'Command Prompt', args = { 'cmd' } },
-      { label = 'Nushell', args = { 'nu' } },
-      {
-         label = 'Git Bash',
-         args = { 'C:\\Users\\kevin\\scoop\\apps\\git\\current\\bin\\bash.exe' },
-      },
+      { label = "wsl", args = { "wsl", "-d", "Ubuntu" } },
+      { label = "pwsh", args = { "pwsh", "-NoLogo" } },
    }
 elseif platform.is_mac then
-   options.default_prog = { 'zsh', '-l' }
+   options.default_prog = { "zsh", "-l" }
    options.launch_menu = {
-      { label = 'Bash', args = { 'bash', '-l' } },
-      { label = 'Fish', args = { '/opt/homebrew/bin/fish', '-l' } },
-      { label = 'Nushell', args = { '/opt/homebrew/bin/nu', '-l' } },
-      { label = 'Zsh', args = { 'zsh', '-l' } },
+      { label = "Bash", args = { "bash", "-l" } },
+      { label = "Fish", args = { "/opt/homebrew/bin/fish", "-l" } },
+      { label = "Nushell", args = { "/opt/homebrew/bin/nu", "-l" } },
+      { label = "Zsh", args = { "zsh", "-l" } },
    }
 elseif platform.is_linux then
-   options.default_prog = { 'fish', '-l' }
+   options.default_prog = { "fish", "-l" }
    options.launch_menu = {
-      { label = 'Bash', args = { 'bash', '-l' } },
-      { label = 'Fish', args = { 'fish', '-l' } },
-      { label = 'Zsh', args = { 'zsh', '-l' } },
+      { label = "Bash", args = { "bash", "-l" } },
+      { label = "Fish", args = { "fish", "-l" } },
+      { label = "Zsh", args = { "zsh", "-l" } },
    }
 end
 
