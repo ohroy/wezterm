@@ -11,8 +11,8 @@ return {
    -- webgpu_power_preference = "HighPerformance",
    -- webgpu_preferred_adapter = gpu_adapters:pick_best(),
 
-   color_scheme = "Catppuccin Mocha",
-   window_background_opacity = 0.7,
+   color_scheme = "Gruvbox Dark (Gogh)",
+   window_background_opacity = 0.8,
    window_decorations = "RESIZE",
    win32_system_backdrop = "Acrylic",
    show_new_tab_button_in_tab_bar = true,
